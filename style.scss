@@ -325,9 +325,6 @@ h6 {
 /***** NAVBAR *****/
 .navbar {
   min-height: 80px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-bottom: 0;
   border: none;
 
 
@@ -344,80 +341,143 @@ h6 {
 
   &.navbar-inverse {
     background-color: transparent;
+
     .navbar-toggle {
+      border: none;
+      background: transparent;
+      transition: transform ease-in-out 0.3s;
+      will-change: transform;
       .icon-bar {
-        color: white;
+        color: $global-inverse-color;
+        will-change: transform;
+        & + .icon-bar {
+          margin-top: 5px;
+        }
+      }
+
+      &.open{
+        transform: rotate(90deg);
+      }
+
+      &:hover{
+        background: transparent;
       }
     }
   }
 
+
   .navbar-nav {
+    box-shadow: inset 0 0 10px 5px rgba(221, 221, 221, 1);
+    background-color: $global-inverse-color;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 -15px;
+
 
     li {
       position: relative;
 
       a {
-        color: $global-inverse-color;
+        color: $text-color;
         padding-top: 10px;
         padding-bottom: 10px;
         font-size: 16px;
 
         &:hover {
           background-color: transparent;
+          color: $text-color;
         }
 
         &:focus {
           background-color: transparent;
+          color: $text-color;
         }
 
-      }
-
-      &:before {
-        z-index: 1;
-        content: '';
-        height: 2px;
-        width: 2px;
-        display: block;
-        position: absolute;
-        background-color: black;
-        bottom: 0;
-        left: 50%;
-
-      }
-
-      &:after {
-        content: '';
-        width: 40px;
-        height: 2px;
-        display: block;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: .3s;
-
-      }
-
-
-      &:hover {
-        &::after {
-          background-color: $primary-color;
-        }
-
-        &::before {
-          background-color: black;
-          transition: .3s;
-        }
       }
     }
 
   }
 }
 
+
+
+
 @media (min-width: 768px) {
 
   .navbar {
     display: flex;
     align-items: center;
+
+    .navbar-header{
+      //padding-top: 15px;
+      //padding-bottom: 15px;
+    }
+    .navbar-nav {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: transparent;
+      box-shadow: none;
+
+      li {
+        position: relative;
+
+        a {
+          color: $global-inverse-color;
+          //padding-top: 10px;
+          //padding-bottom: 10px;
+          //font-size: 16px;
+
+          &:hover {
+            background-color: transparent;
+            color: $global-inverse-color;
+          }
+
+          &:focus {
+            background-color: transparent;
+            color: $global-inverse-color;
+
+          }
+
+        }
+
+        &:before {
+          z-index: 1;
+          content: '';
+          height: 2px;
+          width: 2px;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+
+        }
+
+        &:after {
+          content: '';
+          width: 40px;
+          height: 2px;
+          display: block;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: .3s;
+
+        }
+
+
+        &:hover {
+          &::after {
+            background-color: $primary-color;
+          }
+
+          &::before {
+            background-color: $global-color;
+            transition: .3s;
+          }
+        }
+      }
+
+    }
   }
 }
 

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lucid</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Source+Sans+Pro:300,400,400i,600,600i,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--MODAL-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 ">
+
+
+                            <form action="" method="" autocomplete="off">
+
+                                <div class="form-header">
+                                    <div class="form-title"> EXISTING USERS</div>
+                                    <div class="sub-title">login</div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                           placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                           placeholder="Password">
+                                </div>
+
+                                <div class="row form-footer">
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                    <div class="col-sm-6 text-right">
+                                        <a href="">FORGOT PASSWORD?</a>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div>
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home"
+                                                                              role="tab" data-toggle="tab">SIGN UP</a>
+                                    </li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                                               data-toggle="tab">BILLING INFO</a></li>
+                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
+                                                               data-toggle="tab">PAYMENT</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="home">...</div>
+                                    <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                                    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--MODAL END-->
+
+
+<main>
+    <div class="hero">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Lucid</a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false"
+                     style="height: 1px;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" class="change-color">Change color</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+        <div class="container banner">
+            <div class="hero-content is-inverse">
+                <h6>introducing lucid theme</h6>
+                <h1> Carefully crafted and beautiful landing page.</h1>
+                <p class="description">Etiam ullamcorper et turpis eget hendrerit. Praesent varius risus
+                    mi, at
+                    elementum magna ultricies accumsan. Cras venenatis lacus sed dolor placerat tempus. Morbi
+                    blandit at neque ut imperdiet.</p>
+                <div class="actions">
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">download
+                        now</a>
+                    <a href="#" class="btn btn-secondary">view features</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script src="assets/javascripts/bootstrap.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
