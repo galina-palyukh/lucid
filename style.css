@@ -7313,6 +7313,20 @@ body.active {
 a {
   transition: 0.2s;
 }
+a:focus {
+  outline: none;
+}
+
+.form-control {
+  border: none;
+  box-shadow: none;
+  background: white;
+  border-radius: 0px;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 *.is-inverse {
   color: #fff;
@@ -7324,6 +7338,12 @@ button {
   padding: 12px 18px;
   border: none;
   border-radius: 3px;
+  box-shadow: none;
+  transition: 0.3s;
+}
+.btn:focus,
+button:focus {
+  outline: none;
 }
 
 .btn:not(:last-of-type),
@@ -7386,6 +7406,10 @@ button:not(:last-of-type) {
     text-transform: uppercase;
     padding: 14px 30px;
   }
+
+  .row-flex {
+    display: flex;
+  }
 }
 @media (min-width: 992px) {
   body {
@@ -7398,48 +7422,85 @@ button:not(:last-of-type) {
 }
 /***** BASE END *****/
 /***** MODAL *****/
+#myModal {
+  padding-left: 0 !important;
+}
+#myModal button.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 40px;
+  font-weight: normal;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  opacity: 0.3;
+  transition: 0.2s;
+}
+#myModal button.close:hover {
+  opacity: 1;
+}
 #myModal .modal-dialog {
-  max-width: 1170px;
-  width: 100%;
+  margin: 30px auto;
+  width: 85%;
 }
 #myModal .modal-dialog .modal-content {
   border-radius: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: #434343;
+  border: none;
+}
+#myModal .modal-dialog .modal-content a {
+  color: #434343;
+  font-weight: 500;
+}
+#myModal .modal-dialog .modal-content a:hover {
+  color: #434343;
 }
 #myModal .modal-dialog .modal-content .modal-body {
-  font-family: "Montserrat", sans-serif;
   padding: 0;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child {
-  background: #eeeae3 url(images/people.png) no-repeat bottom center;
-  background-size: cover;
-}
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form {
-  font-size: 12px;
-  max-width: 490px;
-  margin: auto;
-  padding: 180px 0 50px 0;
-}
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form label {
+#myModal .modal-dialog .modal-content .modal-title {
+  margin-bottom: 30px;
   text-transform: uppercase;
+  font-weight: 500;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form .form-header {
-  margin-bottom: 30px;
+#myModal .modal-dialog .modal-content .form-signup .form-group:nth-child(1) .form-control, #myModal .modal-dialog .modal-content .form-signup .form-group:nth-child(2) .form-control {
+  background-color: #f6f6f6;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form .form-footer {
-  margin-top: 40px;
+#myModal .modal-dialog .modal-content .form-signup .form-group:nth-child(3) .form-control, #myModal .modal-dialog .modal-content .form-signup .form-group:nth-child(4) .form-control {
+  background-color: #fbf7f1;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form .form-group {
-  margin-bottom: 30px;
+#myModal .modal-dialog .modal-content form {
+  margin-bottom: 40px;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form .form-title {
+#myModal .modal-dialog .modal-content form label {
   text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+#myModal .modal-dialog .modal-content form .form-header {
   margin-bottom: 30px;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form .sub-title {
+#myModal .modal-dialog .modal-content form .form-content {
+  margin-bottom: 40px;
+}
+#myModal .modal-dialog .modal-content form .form-link {
+  text-decoration: underline;
+  padding: 10px 0;
+  margin: 10px 0;
+  display: inline-block;
+}
+#myModal .modal-dialog .modal-content form .form-group {
+  margin-bottom: 30px;
+}
+#myModal .modal-dialog .modal-content form .form-title {
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  font-weight: 500;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form .sub-title::after {
+#myModal .modal-dialog .modal-content form .form-title::after {
   content: "";
   width: 110px;
   height: 1px;
@@ -7447,44 +7508,110 @@ button:not(:last-of-type) {
   display: block;
   margin-top: 30px;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:first-child form .btn {
+#myModal .modal-dialog .modal-content form .btn {
   background-color: #e7cfa6;
   color: #1a1a1a;
   border: none;
   border-radius: 40px;
-  padding: 10px 80px;
+  padding: 10px 45px;
   text-transform: uppercase;
+  font-weight: 500;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:last-child .nav-tabs {
-  padding-top: 40px;
+#myModal .modal-dialog .modal-content form .btn:hover {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+#myModal .modal-dialog .modal-content .left-side,
+#myModal .modal-dialog .modal-content .right-side {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  max-width: 470px;
+  margin: auto;
+}
+#myModal .modal-dialog .modal-content .background__left-side {
+  background: #F2EDE5 url(images/people.png) no-repeat bottom center;
+  background-size: contain;
+}
+#myModal .modal-dialog .modal-content .right-side .nav-tabs {
+  padding: 20px 0 30px 0;
   border: none;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:last-child .nav-tabs li a {
-  border-bottom: 4px solid #e5e5e5;
-  color: #e5e5e5;
+#myModal .modal-dialog .modal-content .right-side .nav-tabs li {
+  margin-bottom: 10px;
+}
+#myModal .modal-dialog .modal-content .right-side .nav-tabs li:not(:last-child) {
   margin-right: 20px;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:last-child .nav-tabs li.active {
+#myModal .modal-dialog .modal-content .right-side .nav-tabs li a {
+  border-width: 0 0 4px 0;
+  color: #e5e5e5;
+  padding: 13px 15px 10px;
+  margin: 0;
+  border-color: #e5e5e5;
+  border-radius: 0;
+}
+#myModal .modal-dialog .modal-content .right-side .nav-tabs li a:hover {
+  background-color: #e7cfa6;
+  border-color: #e7cfa6;
+  color: white;
+}
+#myModal .modal-dialog .modal-content .right-side .nav-tabs li.active {
   position: relative;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:last-child .nav-tabs li.active:after {
+#myModal .modal-dialog .modal-content .right-side .nav-tabs li.active:after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: -50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
-  border: 4px solid transparent;
-  border-top: 4px solid #e7cfa6;
+  border: 8px solid transparent;
+  border-top: 7px solid #e7cfa6;
+  bottom: -14px;
 }
-#myModal .modal-dialog .modal-content .modal-body .col-sm-6:last-child .nav-tabs li.active a {
+#myModal .modal-dialog .modal-content .right-side .nav-tabs li.active a {
+  position: relative;
   background-color: #e7cfa6;
+  border-bottom: 4px solid #e7cfa6;
   color: #fff;
-  border-color: #e7cfa6;
   border-radius: 0;
-  padding: 10px 30px;
 }
 
+@media (min-width: 768px) {
+  #myModal .modal-dialog {
+    max-width: 750px;
+    width: auto;
+  }
+  #myModal .modal-dialog .modal-content form .form-footer.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #myModal .modal-dialog .modal-content form .form-footer.actions > [class^=col-]:nth-child(2) {
+    text-align: right;
+  }
+}
+@media (min-width: 992px) {
+  #myModal .modal-dialog {
+    max-width: 970px;
+  }
+  #myModal .modal-dialog .modal-content form .btn {
+    padding: 10px 80px;
+  }
+  #myModal .modal-dialog .modal-content .left-side,
+#myModal .modal-dialog .modal-content .right-side {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+@media (min-width: 1200px) {
+  #myModal .modal-dialog {
+    max-width: 1170px;
+  }
+  #myModal .modal-dialog .modal-content .left-side,
+#myModal .modal-dialog .modal-content .right-side {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
 /***** MODAL END *****/
 /***** HERO *****/
 .hero {
